@@ -19,6 +19,7 @@ void init_head(int n)
 	strcpy(head->desc, info);
 	head->next = malloc(sizeof(node));
 	head->next = NULL;
+	printf("Size of struct head is: %lu\nint: %lu, char* %lu, struct node %lu\n", sizeof(*head), sizeof(head->num), sizeof(head->desc), sizeof(head->next));
 }
 
 void insert_node(int n)
@@ -61,12 +62,18 @@ void delete_list()
 		free(temp);
 		temp = temp_next;
 	}
-	free (temp->desc);
+	//free (temp->desc);
 	free (temp);
 }
 
 int main()
 {
+	long l;
+	printf("zie of long: %lu\n",sizeof(l));
+	node n1;
+	printf("Size of struct n1: %lu\n", sizeof(n1));
+	char* s = "hihihihihihihihihihihihihihihihihihi";
+	printf("char pointer \" %s \" size: %lu\n",s,sizeof(s));
 	init_head(1);
 	insert_node(10);
 	insert_node(20);
